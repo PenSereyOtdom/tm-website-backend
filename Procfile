@@ -1,0 +1,1 @@
+web: vendor/bin/tm-website-backend public/
