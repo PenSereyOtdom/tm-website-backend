@@ -1,1 +1,1 @@
-web: vendor/bin/tm-website-backend public/
+web: vendor/bin/heroky-php-apache2 public/
