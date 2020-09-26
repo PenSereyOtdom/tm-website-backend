@@ -38,8 +38,9 @@ class CreateUserByCredentialsTask extends Task
     public function run(
         bool $isClient = true,
         string $email,
+        string $phone,
         string $password,
-        string $name = null,
+        string $username = null,
         string $gender = null,
         string $birth = null
     ): User {
@@ -49,7 +50,8 @@ class CreateUserByCredentialsTask extends Task
             $user = $this->repository->create([
                 'password'  => Hash::make($password),
                 'email'     => $email,
-                'name'      => $name,
+                'phone'     => $phone,
+                'username'      => $username,
                 'gender'    => $gender,
                 'birth'     => $birth,
                 'is_client' => $isClient,

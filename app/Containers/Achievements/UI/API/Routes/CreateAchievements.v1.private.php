@@ -4,7 +4,7 @@
  * @apiGroup           Achievements
  * @apiName            createAchievements
  *
- * @api                {POST} api/v1/achievements Endpoint title here..
+ * @api                {POST} api/v1/achievements Create Achievements
  * @apiDescription     Create achievement
  *
  * @apiVersion         1.0.0
@@ -12,7 +12,7 @@
  * @apiHeader          Accept application/json
  *
  * @apiParam           {String}  ach_title
- * @apiParam           {date}  ach_date
+ * @apiParam           {String}  ach_date
  * @apiParam           {String} ach_detail
  *
  *

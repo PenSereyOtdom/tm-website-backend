@@ -14,9 +14,7 @@ class CreateExperiencelevelsTables extends Migration
         Schema::create('experiencelevels', function (Blueprint $table) {
 
             $table->increments('id');
-            $table->unsignedInteger('user_id');
             $table->string('experience_level')->nullable();
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
             //$table->softDeletes();
 

@@ -19,7 +19,7 @@ class AssignUserToRoleRequest extends Request
      */
     protected $access = [
         'roles'       => '',
-        'permissions' => 'manage-admins-access',
+        'permissions' => '',
     ];
 
     /**
@@ -28,7 +28,6 @@ class AssignUserToRoleRequest extends Request
      * @var  array
      */
     protected $decode = [
-        'user_id',
         'roles_ids.*',
     ];
 

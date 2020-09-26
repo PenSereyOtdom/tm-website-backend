@@ -6,8 +6,7 @@ use App\Ship\Parents\Models\Model;
 
 class UserProfile extends Model
 {
-    protected $table = 'users';
-
+    protected $table = 'userprofiles';
     protected $fillable = [
         'user_id','full_name','email','major','gender','contact','address','facebook_link','twitter_link','guthub_link','linkedin_link','website_link'
     ];

@@ -67,6 +67,8 @@ return [
 
         'attributes' => [
             'email' => ['email'],
+            'username' => ['username'],
+            'phone' => ['phone'],
         ],
 
         /*

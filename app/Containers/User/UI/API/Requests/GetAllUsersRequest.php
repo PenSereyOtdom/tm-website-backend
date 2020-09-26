@@ -18,8 +18,8 @@ class GetAllUsersRequest extends Request
      * @var  array
      */
     protected $access = [
-        'permissions' => '',
-        'roles'       => '',
+        'permissions' => 'list-users',
+        'roles'       => 'admin',
     ];
 
     /**
@@ -47,7 +47,6 @@ class GetAllUsersRequest extends Request
     public function rules()
     {
         return [
-            
 
         ];
     }

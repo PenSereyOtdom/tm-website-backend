@@ -2,11 +2,8 @@
 
 namespace App\Containers\UserProfile\UI\API\Transformers;
 
-use App\Containers\User\UI\API\Transformers\UserTransformer;
 use App\Containers\UserProfile\Models\UserProfile;
-use App\Containers\User\Models\User;
 use App\Ship\Parents\Transformers\Transformer;
-
 
 class UserProfileTransformer extends Transformer
 {
@@ -14,13 +11,14 @@ class UserProfileTransformer extends Transformer
      * @var  array
      */
     protected $defaultIncludes = [
+
     ];
 
     /**
      * @var  array
      */
     protected $availableIncludes = [
-        'users',
+
     ];
 
     /**
@@ -50,15 +48,5 @@ class UserProfileTransformer extends Transformer
         ], $response);
 
         return $response;
-    }
-
-//    public function includeTags(UserProfile $entity)
-//    {
-//        return $this->collection($entity->tags, new UserTransformer);
-//    }
-    public function includeUsers(UserProfile $entity)
-    {
-        $users = $entity->users;
-        return $this->collection($users, new UserTransformer);
     }
 }

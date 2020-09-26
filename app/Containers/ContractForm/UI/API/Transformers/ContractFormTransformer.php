@@ -30,7 +30,7 @@ class ContractFormTransformer extends Transformer
     {
         $response = [
             'object' => 'ContractForm',
-            'id' => $entity->getHashedKey(),
+            'id' => $entity->id,
             'overview'=> $entity->overview,
             'management_of_person_info'=> $entity->management_of_person_info,
             'purpose_of_use'=> $entity->purpose_of_use,

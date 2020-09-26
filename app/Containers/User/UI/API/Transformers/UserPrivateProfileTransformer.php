@@ -2,6 +2,7 @@
 
 namespace App\Containers\User\UI\API\Transformers;
 
+use App\Containers\UserProfile\UI\API\Transformers\UserProfileTransformer;
 use App\Containers\Authorization\UI\API\Transformers\RoleTransformer;
 use App\Containers\User\Models\User;
 use App\Ship\Parents\Transformers\Transformer;
@@ -37,9 +38,10 @@ class UserPrivateProfileTransformer extends Transformer
     {
         $response = [
             'object'               => 'User',
-            'id'                   => $user->getHashedKey(),
-            'name'                 => $user->name,
+            'id'                   => $user->id,
+            'username'             => $user->username,
             'email'                => $user->email,
+            'phone'                 => $user->phone,
             'confirmed'            => $user->confirmed,
             'nickname'             => $user->nickname,
             'gender'               => $user->gender,
@@ -51,12 +53,11 @@ class UserPrivateProfileTransformer extends Transformer
                 'avatar'   => $user->social_avatar,
                 'original' => $user->social_avatar_original,
             ],
-
+            'roles' => $user->roles,
             'created_at'           => $user->created_at,
             'updated_at'           => $user->updated_at,
             'readable_created_at'  => $user->created_at->diffForHumans(),
             'readable_updated_at'  => $user->updated_at->diffForHumans(),
-            'role' => $user->roles()
         ];
 
         $response = $this->ifAdmin([
@@ -71,5 +72,6 @@ class UserPrivateProfileTransformer extends Transformer
     {
         return $this->collection($user->roles, new RoleTransformer());
     }
+
 
 }

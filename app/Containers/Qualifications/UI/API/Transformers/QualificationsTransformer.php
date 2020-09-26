@@ -31,6 +31,7 @@ class QualificationsTransformer extends Transformer
         $response = [
             'object' => 'Qualifications',
             'id' => $entity->getHashedKey(),
+            'qualification' => $entity->qualification,
             'created_at' => $entity->created_at,
             'updated_at' => $entity->updated_at,
 

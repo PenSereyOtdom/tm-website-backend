@@ -11,7 +11,8 @@ class CreateContractFormAction extends Action
     public function run(Request $request)
     {
         $data = $request->sanitizeInput([
-            // add your request data here
+        'applied_id', 'overview','management_of_person_info','purpose_of_use','prohibition','personal_info',
+        'inquiry', 'compliance','contact_us','status_agree',
         ]);
 
         $contractform = Apiato::call('ContractForm@CreateContractFormTask', [$data]);

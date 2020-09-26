@@ -33,7 +33,7 @@ class UpdateJobPostRequest extends Request
      * @var  array
      */
     protected $decode = [
-        // 'id',
+
     ];
 
     /**

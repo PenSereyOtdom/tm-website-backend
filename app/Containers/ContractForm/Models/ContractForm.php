@@ -6,9 +6,10 @@ use App\Ship\Parents\Models\Model;
 
 class ContractForm extends Model
 {
+    protected $table = 'contractforms';
     protected $fillable = [
-        'user_id', 'overview','management_of_person_info','purpose_of_use','prohibition','personal_info',
-        'inquiry', 'compliance','contact_us','status_agree'
+        'applied_id', 'overview','management_of_person_info','purpose_of_use','prohibition','personal_info',
+        'inquiry', 'compliance','contact_us','status_agree',
 
     ];
 

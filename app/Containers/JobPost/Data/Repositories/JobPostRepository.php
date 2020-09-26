@@ -9,13 +9,19 @@ use App\Ship\Parents\Repositories\Repository;
  */
 class JobPostRepository extends Repository
 {
+    protected $container = 'Authorization';
 
     /**
      * @var array
      */
     protected $fieldSearchable = [
-        'id' => 'like',
-        'salary',
+        'user_id' => '=',
+        'project_title' => 'like',
+        'project_classification' => 'like',
+        'location' => 'like',
+        'project_opening_category' => 'like',
+        'project_type' => 'like',
+        'salary' => '='
         // ...
     ];
 

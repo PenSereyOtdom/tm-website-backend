@@ -15,6 +15,7 @@ class SetInterviewRepository extends Repository
      */
     protected $fieldSearchable = [
         'id' => '=',
+        'applied_id' => '=',
         // ...
     ];
 

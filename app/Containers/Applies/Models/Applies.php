@@ -1,14 +1,16 @@
 <?php
 
 namespace App\Containers\Applies\Models;
-
+use App\Containers\Authorization\Traits\AuthorizationTrait;
 use App\Ship\Parents\Models\Model;
 
 class Applies extends Model
 {
+    use AuthorizationTrait;
     protected $table = 'applies';
     protected $fillable = [
-        'user_id', 'confirmed','company_id','job_post_id'
+        'seeker_id','jobpost_id' ,'confirmed','company_id','jobpost_id','full_name','year_exp'
+        ,'progress'
     ];
 
     protected $attributes = [

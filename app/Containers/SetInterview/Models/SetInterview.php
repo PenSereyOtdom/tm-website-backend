@@ -6,8 +6,9 @@ use App\Ship\Parents\Models\Model;
 
 class SetInterview extends Model
 {
+    protected $table = 'setinterviews';
     protected $fillable = [
-        'user_id', 'pick_date','start_time','end_time','meeting_url','note'
+        'applied_id', 'status' , 'pick_date','start_time','end_time','meeting_url','note'
     ];
 
     protected $attributes = [

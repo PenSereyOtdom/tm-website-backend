@@ -12,39 +12,8 @@
  *
  * @apiVersion         1.0.0
  * @apiPermission      Authenticated User
- * @apiHeader          Accept application/json
- * @apiParam           {String}  status
- * @apiParam           {String}  experience
- * @apiParam           {String}  email
- * @apiParam           {String}  name
  *
  * @apiUse             GeneralSuccessMultipleResponse
- *
- * @apiSuccessExample  {json}  Success-Response:
- * HTTP/1.1 200 OK
-    {
-    "data": {
-     *       "name": "",
-     *       "email": "",
-     *       "status": ""
-     * .....
-    }
- * @apiErrorExample  {json}       Error-Response:
- *   {
- *      "message":"401 Credentials Incorrect.",
- *      "status_code":401
- *   }
- *
- * @apiErrorExample  {json}       Error-Response:
- *   {
- *      "message":"Invalid Input.",
- *      "errors":{
- *         "status":[
- *            "The ach_title field is required."
- *         ]
- *      },
- *      "status_code":422
- *   }
  */
 
 $router->get('clients', [

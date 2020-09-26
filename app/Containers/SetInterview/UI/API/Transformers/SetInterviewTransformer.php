@@ -30,7 +30,8 @@ class SetInterviewTransformer extends Transformer
     {
         $response = [
             'object' => 'SetInterview',
-            'id' => $entity->getHashedKey(),
+            'id' => $entity->id,
+            'status'=> $entity->status,
             'pick_date'=> $entity->pick_date,
             'start_time'=> $entity->start_time,
             'end_time'=> $entity->end_time,

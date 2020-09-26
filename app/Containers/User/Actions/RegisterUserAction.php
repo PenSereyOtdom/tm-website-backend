@@ -33,8 +33,9 @@ class RegisterUserAction extends Action
         $user = Apiato::call('User@CreateUserByCredentialsTask', [
             $isClient = true,
             $data->email,
+            $data->phone,
             $data->password,
-            $data->name,
+            $data->username,
             $data->gender,
             $data->birth
         ]);

@@ -3,8 +3,8 @@
 namespace App\Containers\Applies\UI\API\Transformers;
 
 use App\Containers\Applies\Models\Applies;
+use App\Ship\Parents\Transformers\Transformer;
 use App\Containers\Authorization\UI\API\Transformers\RoleTransformer;
-use App\Containers\User\Models\User;
 
 class AppliesTransformer extends Transformer
 {
@@ -12,7 +12,6 @@ class AppliesTransformer extends Transformer
      * @var  array
      */
     protected $defaultIncludes = [
-
     ];
 
     /**
@@ -31,11 +30,12 @@ class AppliesTransformer extends Transformer
     {
         $response = [
             'object' => 'Applies',
-            'id' => $entity->getHashedKey(),
+            'id' => $entity->id,
+            'full_name' => $entity->full_name,
+            'year_exp' => $entity->year_exp,
             'confirmed'=> $entity->confirmed,
             'created_at' => $entity->created_at,
-            'updated_at' => $entity->updated_at,
-
+            'real_id'    => $entity->seeker_id,
         ];
 
         $response = $this->ifAdmin([
@@ -45,8 +45,5 @@ class AppliesTransformer extends Transformer
 
         return $response;
     }
-    public function includeRoles(User $user)
-    {
-        return $this->collection($user);
-    }
+   
 }

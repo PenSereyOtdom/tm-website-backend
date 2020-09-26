@@ -68,7 +68,7 @@
  */
 
 /** @var Route $router */
-$router->patch('jobposts/{id}', [
+$router->put('jobposts/{id}', [
     'as' => 'api_jobpost_update_job_post',
     'uses'  => 'Controller@updateJobPost',
     'middleware' => [

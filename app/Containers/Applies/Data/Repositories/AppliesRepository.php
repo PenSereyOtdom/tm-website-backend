@@ -15,6 +15,9 @@ class AppliesRepository extends Repository
      */
     protected $fieldSearchable = [
         'id' => '=',
+        'company_id' => '=',
+        'seeker_id' => '=',
+        'jobpost_id' => '='
         // ...
     ];
 

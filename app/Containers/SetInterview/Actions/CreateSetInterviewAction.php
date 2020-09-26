@@ -11,7 +11,7 @@ class CreateSetInterviewAction extends Action
     public function run(Request $request)
     {
         $data = $request->sanitizeInput([
-            // add your request data here
+            'applied_id', 'status' , 'pick_date','start_time','end_time','meeting_url','note'
         ]);
 
         $setinterview = Apiato::call('SetInterview@CreateSetInterviewTask', [$data]);

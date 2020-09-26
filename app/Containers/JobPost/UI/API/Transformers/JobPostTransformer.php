@@ -30,7 +30,8 @@ class JobPostTransformer extends Transformer
     {
         $response = [
             'object' => 'JobPosts',
-            'id' => $entity->getHashedKey(),
+            'id' => $entity->id,
+            'user_id' => $entity->user_id,
             'project_title' => $entity->project_title,
             'project_classification'=> $entity->project_classification,
             'project_opening_category'=> $entity->project_opening_category,
@@ -45,9 +46,11 @@ class JobPostTransformer extends Transformer
             'requirement'=> $entity->requirement,
             'phone_number'=> $entity->phone_number,
             'email'=> $entity->email,
+            'phone_number' => $entity->phone_number,
             'closing_date'=> $entity->closing_date,
             'project_priority'=> $entity->project_priority,
             'condition'=> $entity->condition,
+            'status' => $entity->status,
             'created_at' => $entity->created_at,
             'updated_at' => $entity->updated_at,
 

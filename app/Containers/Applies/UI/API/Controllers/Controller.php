@@ -47,7 +47,7 @@ class Controller extends ApiController
     public function getAllApplies(GetAllAppliesRequest $request)
     {
         $applies = Apiato::call('Applies@GetAllAppliesAction', [$request]);
-
+        
         return $this->transform($applies, AppliesTransformer::class);
     }
 

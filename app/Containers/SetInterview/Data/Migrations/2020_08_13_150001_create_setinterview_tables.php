@@ -14,14 +14,15 @@ class CreateSetinterviewTables extends Migration
         Schema::create('setinterviews', function (Blueprint $table) {
 
             $table->increments('id');
-            $table->unsignedInteger('user_id');
+            $table->unsignedInteger('applied_id');
             $table->string('pick_date');
+            $table->string('status');
             $table->string('start_time');
             $table->string('end_time');
             $table->string('meeting_url');
             $table->string('note');
             $table->timestamps();
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('applied_id')->references('id')->on('applies')->onDelete('cascade');
 
         });
     }

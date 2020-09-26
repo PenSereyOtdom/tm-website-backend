@@ -4,7 +4,7 @@
  * @apiGroup           Achievements
  * @apiName            deleteAchievements
  *
- * @api                {DELETE} /v1/achievements/:id Endpoint title here..
+ * @api                {DELETE} /v1/achievements/:id .
  * @apiDescription     Delete Achievements
  *
  * @apiVersion         1.0.0

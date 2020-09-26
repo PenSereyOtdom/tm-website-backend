@@ -4,7 +4,7 @@ define({ "api": [
     "name": "createAchievements",
     "type": "POST",
     "url": "api/v1/achievements",
-    "title": "Endpoint title here..",
+    "title": "Create Achievements",
     "description": "<p>Create achievement</p>",
     "version": "1.0.0",
     "permission": [
@@ -36,7 +36,7 @@ define({ "api": [
           },
           {
             "group": "Parameter",
-            "type": "date",
+            "type": "String",
             "optional": false,
             "field": "ach_date",
             "description": ""
@@ -82,7 +82,7 @@ define({ "api": [
     "name": "deleteAchievements",
     "type": "DELETE",
     "url": "/v1/achievements/:id",
-    "title": "Endpoint title here..",
+    "title": ".",
     "description": "<p>Delete Achievements</p>",
     "version": "1.0.0",
     "permission": [
@@ -1344,7 +1344,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "HTTP/1.1 200 OK\n    {\n    \"data\": {\n      \"full_name\": \"\",\n      \"email\": \"\",\n      \"img_profile\": \"\"\n      .....\n    }",
+          "content": "HTTP/1.1 200 OK\n    {\n    \"data\": {\n        'object' => 'CompanyProfile',\n        'id' => $entity->getHashedKey(),\n        'full_name'=> $entity->full_name,\n        'email'=> $entity->email,\n        'img_profile'=> $entity->img_profile,\n        'overview'=> $entity->overview,\n        'company_name'=> $entity->company_name,\n        'address'=> $entity->address,\n        'representative'=> $entity->representative,\n        'person_in_charge'=> $entity->person_in_charge,\n        'contact'=> $entity->contact,\n        'year_of_establishment'=> $entity->year_of_establishment,\n        'annul_sales'=> $entity->annul_sales,\n        'number_of_employees'=> $entity->number_of_employees,\n        'overview_history'=> $entity->overview_history,\n        'main_supplier'=> $entity->main_supplier,\n        'main_client'=> $entity->main_client,\n        'business_detail'=> $entity->business_detail,\n        'area_of_expertise'=> $entity->area_of_expertise,\n        'construction'=> $entity->construction,\n        'target_layer'=> $entity->target_layer,\n        'url_name'=> $entity->url_name,\n        'other'=> $entity->other,\n        'created_at' => $entity->created_at,\n        'updated_at' => $entity->updated_at,\n    }",
           "type": "json"
         }
       ]
@@ -6543,7 +6543,104 @@ define({ "api": [
         }
       ]
     },
+    "filename": "app/Containers/U/UI/API/Routes/ForgotPassword.v1.public.php",
+    "groupTitle": "User"
+  },
+  {
+    "group": "User",
+    "name": "forgotPassword",
+    "type": "POST",
+    "url": "/v1/password/forgot",
+    "title": "Forgot password",
+    "description": "<p>Forgot password endpoint.</p>",
+    "version": "1.0.0",
+    "permission": [
+      {
+        "name": "none"
+      }
+    ],
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "email",
+            "description": ""
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "reseturl",
+            "description": "<p>the reset password url</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 202 OK\n{}",
+          "type": "json"
+        }
+      ]
+    },
     "filename": "app/Containers/User/UI/API/Routes/ForgotPassword.v1.public.php",
+    "groupTitle": "User"
+  },
+  {
+    "group": "User",
+    "name": "resetPassword",
+    "type": "GET/POST",
+    "url": "/v1/password/reset",
+    "title": "Reset Password",
+    "description": "<p>Resets a password for an user.</p>",
+    "version": "1.0.0",
+    "permission": [
+      {
+        "name": "none"
+      }
+    ],
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "email",
+            "description": ""
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "token",
+            "description": "<p>from the forgot password email</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "password",
+            "description": "<p>the new password</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 204 OK\n{}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "app/Containers/U/UI/API/Routes/ResetPassword.v1.public.php",
     "groupTitle": "User"
   },
   {
@@ -6638,6 +6735,58 @@ define({ "api": [
         ]
       }
     },
+    "filename": "app/Containers/U/UI/API/Routes/CreateAdmin.v1.private.php",
+    "groupTitle": "Users",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n   \"data\":{\n      \"object\":\"User\",\n      \"id\":eqwja3vw94kzmxr0,\n      \"name\":\"Mahmoud Zalt\",\n      \"email\":\"x.rolllln@hotmail.com\",\n      \"confirmed\":\"0\",\n      \"created_at\":{\n         \"date\":\"2017-06-06 05:40:51.000000\",\n         \"timezone_type\":3,\n         \"timezone\":\"UTC\"\n      },\n      \"updated_at\":{\n         \"date\":\"2017-06-06 05:40:51.000000\",\n         \"timezone_type\":3,\n         \"timezone\":\"UTC\"\n      },\n      \"readable_created_at\":\"1 second ago\",\n      \"readable_updated_at\":\"1 second ago\",\n      \"roles\":{\n         \"data\":[\n            {\n               \"object\": \"Role\",\n               \"id\": abcderf,\n               \"name\":\"admin\",\n               \"description\":\"Super Administrator\",\n               \"display_name\":\"\"\n            },\n            {\n               \"object\": \"Role\",\n               \"id\": ascderf,\n               \"name\":\"client\",\n               \"description\":\"Special Client!\",\n               \"display_name\":\"\"\n            }\n         ]\n      }\n   },\n   \"meta\":{\n      \"include\":[\n         \"stores\",\n         \"invoices\",\n      ],\n      \"custom\":[\n\n      ]\n   }\n}",
+          "type": "json"
+        }
+      ]
+    }
+  },
+  {
+    "group": "Users",
+    "name": "createAdmin",
+    "type": "post",
+    "url": "/v1/admins",
+    "title": "Create Admin type Users",
+    "description": "<p>Create non client users for the Dashboard.</p>",
+    "version": "1.0.0",
+    "permission": [
+      {
+        "name": "none"
+      }
+    ],
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "email",
+            "description": ""
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "password",
+            "description": ""
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "name",
+            "description": ""
+          }
+        ]
+      }
+    },
     "filename": "app/Containers/User/UI/API/Routes/CreateAdmin.v1.private.php",
     "groupTitle": "Users",
     "success": {
@@ -6649,6 +6798,31 @@ define({ "api": [
         }
       ]
     }
+  },
+  {
+    "group": "Users",
+    "name": "deleteUser",
+    "type": "delete",
+    "url": "/v1/users/:id",
+    "title": "Delete User",
+    "description": "<p>Delete users of any type (Admin, Client...)</p>",
+    "version": "1.0.0",
+    "permission": [
+      {
+        "name": "Authenticated User"
+      }
+    ],
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 202 OK\n{\n    \"message\": \"User (4) Deleted Successfully.\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "app/Containers/U/UI/API/Routes/DeleteUser.v1.private.php",
+    "groupTitle": "Users"
   },
   {
     "group": "Users",
@@ -6688,6 +6862,31 @@ define({ "api": [
         "name": "Authenticated User"
       }
     ],
+    "filename": "app/Containers/U/UI/API/Routes/FindUserById.v1.private.php",
+    "groupTitle": "Users",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n   \"data\":{\n      \"object\":\"User\",\n      \"id\":eqwja3vw94kzmxr0,\n      \"name\":\"Mahmoud Zalt\",\n      \"email\":\"x.rolllln@hotmail.com\",\n      \"confirmed\":\"0\",\n      \"created_at\":{\n         \"date\":\"2017-06-06 05:40:51.000000\",\n         \"timezone_type\":3,\n         \"timezone\":\"UTC\"\n      },\n      \"updated_at\":{\n         \"date\":\"2017-06-06 05:40:51.000000\",\n         \"timezone_type\":3,\n         \"timezone\":\"UTC\"\n      },\n      \"readable_created_at\":\"1 second ago\",\n      \"readable_updated_at\":\"1 second ago\",\n      \"roles\":{\n         \"data\":[\n            {\n               \"object\": \"Role\",\n               \"id\": abcderf,\n               \"name\":\"admin\",\n               \"description\":\"Super Administrator\",\n               \"display_name\":\"\"\n            },\n            {\n               \"object\": \"Role\",\n               \"id\": ascderf,\n               \"name\":\"client\",\n               \"description\":\"Special Client!\",\n               \"display_name\":\"\"\n            }\n         ]\n      }\n   },\n   \"meta\":{\n      \"include\":[\n         \"stores\",\n         \"invoices\",\n      ],\n      \"custom\":[\n\n      ]\n   }\n}",
+          "type": "json"
+        }
+      ]
+    }
+  },
+  {
+    "group": "Users",
+    "name": "findUserById",
+    "type": "get",
+    "url": "/v1/users/:id",
+    "title": "Find User",
+    "description": "<p>Find a user by its ID</p>",
+    "version": "1.0.0",
+    "permission": [
+      {
+        "name": "Authenticated User"
+      }
+    ],
     "filename": "app/Containers/User/UI/API/Routes/FindUserById.v1.private.php",
     "groupTitle": "Users",
     "success": {
@@ -6695,6 +6894,31 @@ define({ "api": [
         {
           "title": "Success-Response:",
           "content": "HTTP/1.1 200 OK\n{\n   \"data\":{\n      \"object\":\"User\",\n      \"id\":eqwja3vw94kzmxr0,\n      \"name\":\"Mahmoud Zalt\",\n      \"email\":\"x.rolllln@hotmail.com\",\n      \"confirmed\":\"0\",\n      \"created_at\":{\n         \"date\":\"2017-06-06 05:40:51.000000\",\n         \"timezone_type\":3,\n         \"timezone\":\"UTC\"\n      },\n      \"updated_at\":{\n         \"date\":\"2017-06-06 05:40:51.000000\",\n         \"timezone_type\":3,\n         \"timezone\":\"UTC\"\n      },\n      \"readable_created_at\":\"1 second ago\",\n      \"readable_updated_at\":\"1 second ago\",\n      \"roles\":{\n         \"data\":[\n            {\n               \"object\": \"Role\",\n               \"id\": abcderf,\n               \"name\":\"admin\",\n               \"description\":\"Super Administrator\",\n               \"display_name\":\"\"\n            },\n            {\n               \"object\": \"Role\",\n               \"id\": ascderf,\n               \"name\":\"client\",\n               \"description\":\"Special Client!\",\n               \"display_name\":\"\"\n            }\n         ]\n      }\n   },\n   \"meta\":{\n      \"include\":[\n         \"stores\",\n         \"invoices\",\n      ],\n      \"custom\":[\n\n      ]\n   }\n}",
+          "type": "json"
+        }
+      ]
+    }
+  },
+  {
+    "group": "Users",
+    "name": "getAllAdmins",
+    "type": "get",
+    "url": "/v1/admins",
+    "title": "Get All Admin Users",
+    "description": "<p>Get All Users where role <code>Admin</code>. You can search for Users by email, name and ID. Example: <code>?search=Mahmoud</code> or <code>?search=whatever@mail.com</code>. You can specify the field as follow <code>?search=email:whatever@mail.com</code> or <code>?search=id:20</code>. You can search by multiple fields as follow: <code>?search=name:Mahmoud&amp;email:whatever@mail.com</code>.</p>",
+    "version": "1.0.0",
+    "permission": [
+      {
+        "name": "Authenticated Admin"
+      }
+    ],
+    "filename": "app/Containers/U/UI/API/Routes/GetAllAdmins.v1.private.php",
+    "groupTitle": "Users",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n  \"data\": [\n    {\n      // same object structure of the single response\n    },\n    {\n      // ...\n    },\n    // ...\n  ],\n  \"include\": [\n    \"xxx\",\n    \"yyy\",\n  ],\n  \"custom\": [],\n  \"meta\": {\n    \"pagination\": {\n      \"total\": x,\n      \"count\": x,\n      \"per_page\": x,\n      \"current_page\": x,\n      \"total_pages\": x,\n      \"links\": []\n    }\n  }\n}",
           "type": "json"
         }
       ]
@@ -6812,8 +7036,58 @@ define({ "api": [
         }
       ]
     },
-    "filename": "app/Containers/User/UI/API/Routes/GetAllClients.v1.private.php",
+    "filename": "app/Containers/U/UI/API/Routes/GetAllClients.v1.private.php",
     "groupTitle": "Users"
+  },
+  {
+    "group": "Users",
+    "name": "getAllClients",
+    "type": "get",
+    "url": "/v1/clients",
+    "title": "Get All Client Users",
+    "description": "<p>Get All Users where role <code>Client</code>. You can search for Users by email, name and ID. Example: <code>?search=Mahmoud</code> or <code>?search=whatever@mail.com</code>. You can specify the field as follow <code>?search=email:whatever@mail.com</code> or <code>?search=id:20</code>. You can search by multiple fields as follow: <code>?search=name:Mahmoud&amp;email:whatever@mail.com</code>.</p>",
+    "version": "1.0.0",
+    "permission": [
+      {
+        "name": "Authenticated User"
+      }
+    ],
+    "filename": "app/Containers/User/UI/API/Routes/GetAllClients.v1.private.php",
+    "groupTitle": "Users",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n  \"data\": [\n    {\n      // same object structure of the single response\n    },\n    {\n      // ...\n    },\n    // ...\n  ],\n  \"include\": [\n    \"xxx\",\n    \"yyy\",\n  ],\n  \"custom\": [],\n  \"meta\": {\n    \"pagination\": {\n      \"total\": x,\n      \"count\": x,\n      \"per_page\": x,\n      \"current_page\": x,\n      \"total_pages\": x,\n      \"links\": []\n    }\n  }\n}",
+          "type": "json"
+        }
+      ]
+    }
+  },
+  {
+    "group": "Users",
+    "name": "getAllUsers",
+    "type": "get",
+    "url": "/v1/users",
+    "title": "Get All Users",
+    "description": "<p>Get All Application Users (clients and admins). For all registered users &quot;Clients&quot; only you can use <code>/clients</code>. And for all &quot;Admins&quot; only you can use <code>/admins</code>.</p>",
+    "version": "1.0.0",
+    "permission": [
+      {
+        "name": "Authenticated User"
+      }
+    ],
+    "filename": "app/Containers/U/UI/API/Routes/GetAllUsers.v1.private.php",
+    "groupTitle": "Users",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n  \"data\": [\n    {\n      // same object structure of the single response\n    },\n    {\n      // ...\n    },\n    // ...\n  ],\n  \"include\": [\n    \"xxx\",\n    \"yyy\",\n  ],\n  \"custom\": [],\n  \"meta\": {\n    \"pagination\": {\n      \"total\": x,\n      \"count\": x,\n      \"per_page\": x,\n      \"current_page\": x,\n      \"total_pages\": x,\n      \"links\": []\n    }\n  }\n}",
+          "type": "json"
+        }
+      ]
+    }
   },
   {
     "group": "Users",
@@ -6835,6 +7109,31 @@ define({ "api": [
         {
           "title": "Success-Response:",
           "content": "HTTP/1.1 200 OK\n{\n  \"data\": [\n    {\n      // same object structure of the single response\n    },\n    {\n      // ...\n    },\n    // ...\n  ],\n  \"include\": [\n    \"xxx\",\n    \"yyy\",\n  ],\n  \"custom\": [],\n  \"meta\": {\n    \"pagination\": {\n      \"total\": x,\n      \"count\": x,\n      \"per_page\": x,\n      \"current_page\": x,\n      \"total_pages\": x,\n      \"links\": []\n    }\n  }\n}",
+          "type": "json"
+        }
+      ]
+    }
+  },
+  {
+    "group": "Users",
+    "name": "getAuthenticatedUser",
+    "type": "GET",
+    "url": "/v1/user/profile",
+    "title": "Find Logged in User data (Profile Information)",
+    "description": "<p>Find the user details of the logged in user from its Token. (without specifying his ID)</p>",
+    "version": "1.0.0",
+    "permission": [
+      {
+        "name": "none"
+      }
+    ],
+    "filename": "app/Containers/U/UI/API/Routes/GetAuthenticatedUser.v1.private.php",
+    "groupTitle": "Users",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n   \"data\":{\n      \"object\":\"User\",\n      \"id\":eqwja3vw94kzmxr0,\n      \"name\":\"Mahmoud Zalt\",\n      \"email\":\"x.rolllln@hotmail.com\",\n      \"confirmed\":\"0\",\n      \"created_at\":{\n         \"date\":\"2017-06-06 05:40:51.000000\",\n         \"timezone_type\":3,\n         \"timezone\":\"UTC\"\n      },\n      \"updated_at\":{\n         \"date\":\"2017-06-06 05:40:51.000000\",\n         \"timezone_type\":3,\n         \"timezone\":\"UTC\"\n      },\n      \"readable_created_at\":\"1 second ago\",\n      \"readable_updated_at\":\"1 second ago\",\n      \"roles\":{\n         \"data\":[\n            {\n               \"object\": \"Role\",\n               \"id\": abcderf,\n               \"name\":\"admin\",\n               \"description\":\"Super Administrator\",\n               \"display_name\":\"\"\n            },\n            {\n               \"object\": \"Role\",\n               \"id\": ascderf,\n               \"name\":\"client\",\n               \"description\":\"Special Client!\",\n               \"display_name\":\"\"\n            }\n         ]\n      }\n   },\n   \"meta\":{\n      \"include\":[\n         \"stores\",\n         \"invoices\",\n      ],\n      \"custom\":[\n\n      ]\n   }\n}",
           "type": "json"
         }
       ]
@@ -6919,7 +7218,117 @@ define({ "api": [
         ]
       }
     },
+    "filename": "app/Containers/U/UI/API/Routes/RegisterUser.v1.private.php",
+    "groupTitle": "Users",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n   \"data\":{\n      \"object\":\"User\",\n      \"id\":eqwja3vw94kzmxr0,\n      \"name\":\"Mahmoud Zalt\",\n      \"email\":\"x.rolllln@hotmail.com\",\n      \"confirmed\":\"0\",\n      \"created_at\":{\n         \"date\":\"2017-06-06 05:40:51.000000\",\n         \"timezone_type\":3,\n         \"timezone\":\"UTC\"\n      },\n      \"updated_at\":{\n         \"date\":\"2017-06-06 05:40:51.000000\",\n         \"timezone_type\":3,\n         \"timezone\":\"UTC\"\n      },\n      \"readable_created_at\":\"1 second ago\",\n      \"readable_updated_at\":\"1 second ago\",\n      \"roles\":{\n         \"data\":[\n            {\n               \"object\": \"Role\",\n               \"id\": abcderf,\n               \"name\":\"admin\",\n               \"description\":\"Super Administrator\",\n               \"display_name\":\"\"\n            },\n            {\n               \"object\": \"Role\",\n               \"id\": ascderf,\n               \"name\":\"client\",\n               \"description\":\"Special Client!\",\n               \"display_name\":\"\"\n            }\n         ]\n      }\n   },\n   \"meta\":{\n      \"include\":[\n         \"stores\",\n         \"invoices\",\n      ],\n      \"custom\":[\n\n      ]\n   }\n}",
+          "type": "json"
+        }
+      ]
+    }
+  },
+  {
+    "group": "Users",
+    "name": "registerUser",
+    "type": "post",
+    "url": "/v1/register",
+    "title": "Register User (create client)",
+    "description": "<p>Register users as (client).</p>",
+    "version": "1.0.0",
+    "permission": [
+      {
+        "name": "none"
+      }
+    ],
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "email",
+            "description": "<p>(required)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "password",
+            "description": "<p>(required)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "name",
+            "description": "<p>(optional)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "gender",
+            "description": "<p>(optional)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "birth",
+            "description": "<p>(optional)</p>"
+          }
+        ]
+      }
+    },
     "filename": "app/Containers/User/UI/API/Routes/RegisterUser.v1.private.php",
+    "groupTitle": "Users",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n   \"data\":{\n      \"object\":\"User\",\n      \"id\":eqwja3vw94kzmxr0,\n      \"name\":\"Mahmoud Zalt\",\n      \"email\":\"x.rolllln@hotmail.com\",\n      \"confirmed\":\"0\",\n      \"created_at\":{\n         \"date\":\"2017-06-06 05:40:51.000000\",\n         \"timezone_type\":3,\n         \"timezone\":\"UTC\"\n      },\n      \"updated_at\":{\n         \"date\":\"2017-06-06 05:40:51.000000\",\n         \"timezone_type\":3,\n         \"timezone\":\"UTC\"\n      },\n      \"readable_created_at\":\"1 second ago\",\n      \"readable_updated_at\":\"1 second ago\",\n      \"roles\":{\n         \"data\":[\n            {\n               \"object\": \"Role\",\n               \"id\": abcderf,\n               \"name\":\"admin\",\n               \"description\":\"Super Administrator\",\n               \"display_name\":\"\"\n            },\n            {\n               \"object\": \"Role\",\n               \"id\": ascderf,\n               \"name\":\"client\",\n               \"description\":\"Special Client!\",\n               \"display_name\":\"\"\n            }\n         ]\n      }\n   },\n   \"meta\":{\n      \"include\":[\n         \"stores\",\n         \"invoices\",\n      ],\n      \"custom\":[\n\n      ]\n   }\n}",
+          "type": "json"
+        }
+      ]
+    }
+  },
+  {
+    "group": "Users",
+    "name": "updateUser",
+    "type": "put",
+    "url": "/v1/users/:id",
+    "title": "Update User",
+    "version": "1.0.0",
+    "permission": [
+      {
+        "name": "Authenticated User"
+      }
+    ],
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "password",
+            "description": "<p>(optional)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "name",
+            "description": "<p>(optional)</p>"
+          }
+        ]
+      }
+    },
+    "filename": "app/Containers/U/UI/API/Routes/UpdateUser.v1.private.php",
     "groupTitle": "Users",
     "success": {
       "examples": [

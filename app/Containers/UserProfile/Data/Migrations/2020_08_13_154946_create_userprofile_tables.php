@@ -15,6 +15,7 @@ class CreateUserprofileTables extends Migration
             $table->increments('id');
             $table->unsignedInteger('user_id');
             $table->string('first_name');
+            $table->string('status');
             $table->string('last_name');
             $table->string('email');
             $table->string('major');

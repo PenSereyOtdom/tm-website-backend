@@ -14,11 +14,8 @@ class CreateBusinessindustriesTables extends Migration
         Schema::create('businessindustries', function (Blueprint $table) {
 
             $table->increments('id');
-            $table->unsignedInteger('user_id');
             $table->string('business_industry')->nullable();
             $table->timestamps();
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-
             //$table->softDeletes();
 
         });

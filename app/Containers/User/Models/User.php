@@ -36,8 +36,9 @@ class User extends UserModel implements ChargeableInterface
      * @var array
      */
     protected $fillable = [
-        'name',
+        'username',
         'email',
+        'phone',
         'password',
         'device',
         'platform',

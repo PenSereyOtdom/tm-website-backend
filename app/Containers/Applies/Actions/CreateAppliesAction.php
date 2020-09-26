@@ -11,7 +11,8 @@ class CreateAppliesAction extends Action
     public function run(Request $request)
     {
         $data = $request->sanitizeInput([
-            'user_id', 'confirmed'
+            'seeker_id','jobpost_id' ,'confirmed','company_id','jobpost_id','full_name','year_exp'
+            ,'progress'
         ]);
 
         $applies = Apiato::call('Applies@CreateAppliesTask', [$data]);

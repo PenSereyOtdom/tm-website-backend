@@ -8,7 +8,7 @@ class BusinessIndustries extends Model
 {
     protected $table = 'businessindustries';
     protected $fillable = [
-        'user_id','business_industry'
+        'business_industry'
     ];
 
     protected $attributes = [

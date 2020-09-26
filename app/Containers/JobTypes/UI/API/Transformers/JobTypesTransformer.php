@@ -31,6 +31,7 @@ class JobTypesTransformer extends Transformer
         $response = [
             'object' => 'JobTypes',
             'id' => $entity->getHashedKey(),
+            'job_type' => $entity->job_type,
             'created_at' => $entity->created_at,
             'updated_at' => $entity->updated_at,
 

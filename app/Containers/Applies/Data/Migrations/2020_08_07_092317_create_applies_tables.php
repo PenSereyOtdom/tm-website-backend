@@ -13,22 +13,26 @@ class CreateAppliesTables extends Migration
     {
         Schema::create('applies', function (Blueprint $table) {
             $table->increments('id');
-            $table->unsignedInteger('user_id');
+            $table->unsignedInteger('seeker_id');
             $table->unsignedInteger('company_id');
-            $table->unsignedInteger('job_post_id');
+            $table->unsignedInteger('jobpost_id')->unique()->nullable();;
             $table->string('confirmed');
+            $table->string('full_name');
+            $table->string('year_exp');
+            $table->string('progress');
             $table->timestamps();
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-            //$table->softDeletes();
+            $table->foreign('seeker_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('company_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('jobpost_id')->references('id')->on('jobposts')->onDelete('cascade');
+            $table->softDeletes();
 
         });
     }
-
-    /**
-     * Reverse the migrations.
-     */
+     
+    
     public function down()
     {
         Schema::dropIfExists('applies');
+        
     }
 }

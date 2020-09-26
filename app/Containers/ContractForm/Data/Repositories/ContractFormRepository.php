@@ -15,6 +15,7 @@ class ContractFormRepository extends Repository
      */
     protected $fieldSearchable = [
         'id' => '=',
+        'applied_id' => '=',
         // ...
     ];
 
