@@ -8,7 +8,7 @@ class SetInterview extends Model
 {
     protected $table = 'setinterviews';
     protected $fillable = [
-        'applied_id', 'status' , 'pick_date','start_time','end_time','meeting_url','note'
+        'applies_id', 'status' , 'pick_date','start_time','end_time','meeting_url','note'
     ];
 
     protected $attributes = [

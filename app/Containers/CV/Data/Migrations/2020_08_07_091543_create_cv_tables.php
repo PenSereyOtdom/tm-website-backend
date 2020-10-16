@@ -14,7 +14,7 @@ class CreateCvTables extends Migration
         Schema::create('cvs', function (Blueprint $table) {
 
             $table->increments('id');
-            $table->unsignedInteger('user_id')->unique();
+            $table->unsignedInteger('seeker_id')->unique();
             $table->string('full_name')->nullable();
             $table->string('gender')->nullable();
             $table->string('dob')->nullable();
@@ -23,7 +23,7 @@ class CreateCvTables extends Migration
             $table->integer('phone_number')->nullable();
             $table->longText('summary')->nullable();
             $table->timestamps();
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('seeker_id')->references('id')->on('users')->onDelete('cascade');
             //$table->softDeletes();
 
         });

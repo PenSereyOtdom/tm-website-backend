@@ -2,6 +2,8 @@
 
 namespace App\Containers\User\UI\API\Transformers;
 
+use App\Containers\Applies\Models\Applies;
+use App\Containers\Applies\UI\API\Transformers\AppliesTransformer;
 use App\Containers\UserProfile\UI\API\Transformers\UserProfileTransformer;
 use App\Containers\Authorization\UI\API\Transformers\RoleTransformer;
 use App\Containers\User\Models\User;
@@ -26,7 +28,6 @@ class UserPrivateProfileTransformer extends Transformer
      * @var  array
      */
     protected $defaultIncludes = [
-
     ];
 
     /**
@@ -41,7 +42,7 @@ class UserPrivateProfileTransformer extends Transformer
             'id'                   => $user->id,
             'username'             => $user->username,
             'email'                => $user->email,
-            'phone'                 => $user->phone,
+            'phone'                => $user->phone,
             'confirmed'            => $user->confirmed,
             'nickname'             => $user->nickname,
             'gender'               => $user->gender,
@@ -72,6 +73,4 @@ class UserPrivateProfileTransformer extends Transformer
     {
         return $this->collection($user->roles, new RoleTransformer());
     }
-
-
 }

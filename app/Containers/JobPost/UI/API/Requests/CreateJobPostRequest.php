@@ -52,7 +52,7 @@ class CreateJobPostRequest extends Request
     public function rules()
     {
         return [
-            'user_id' => 'required',
+            'company_id' => 'required',
             'project_title' => 'required',
             'project_classification'=>'required',
             'project_opening_category'=>'required',

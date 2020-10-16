@@ -11,7 +11,7 @@ class UpdateCVAction extends Action
     public function run(Request $request)
     {
         $data = $request->sanitizeInput([
-            'user_id', 'full_name','email', 'phone_number', 'summary','gender','dob','skill'
+            'full_name','email', 'phone_number', 'summary','gender','dob','skill'
         ]);
 
         $cv = Apiato::call('CV@UpdateCVTask', [$request->id, $data]);

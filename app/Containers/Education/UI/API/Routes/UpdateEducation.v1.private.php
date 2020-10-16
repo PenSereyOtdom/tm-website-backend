@@ -20,7 +20,7 @@
  */
 
 /** @var Route $router */
-$router->patch('education/{id}', [
+$router->put('education/{id}', [
     'as' => 'api_education_update_education',
     'uses'  => 'Controller@updateEducation',
     'middleware' => [

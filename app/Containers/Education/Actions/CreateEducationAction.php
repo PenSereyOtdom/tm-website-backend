@@ -11,7 +11,7 @@ class CreateEducationAction extends Action
     public function run(Request $request)
     {
         $data = $request->sanitizeInput([
-            'user_id','school_name', 'major', 'degree', 'exp_total','edu_start_date', 'edu_end_date','edu_detail'
+            'seeker_id','school_name', 'major', 'degree','edu_start_date', 'edu_end_date','edu_detail'
         ]);
 
         $education = Apiato::call('Education@CreateEducationTask', [$data]);

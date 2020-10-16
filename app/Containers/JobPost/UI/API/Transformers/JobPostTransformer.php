@@ -2,6 +2,7 @@
 
 namespace App\Containers\JobPost\UI\API\Transformers;
 
+use App\Containers\CompanyProfile\UI\API\Transformers\CompanyProfileTransformer;
 use App\Containers\JobPost\Models\JobPost;
 use App\Ship\Parents\Transformers\Transformer;
 
@@ -11,7 +12,7 @@ class JobPostTransformer extends Transformer
      * @var  array
      */
     protected $defaultIncludes = [
-
+        'companyprofiles'
     ];
 
     /**
@@ -53,8 +54,6 @@ class JobPostTransformer extends Transformer
             'status' => $entity->status,
             'created_at' => $entity->created_at,
             'updated_at' => $entity->updated_at,
-
-
         ];
 
         $response = $this->ifAdmin([
@@ -63,5 +62,8 @@ class JobPostTransformer extends Transformer
         ], $response);
 
         return $response;
+    }
+    public function includeCompanyProfiles(JobPost $entity){
+        return $this->collection($entity->companyprofile, new CompanyProfileTransformer());
     }
 }

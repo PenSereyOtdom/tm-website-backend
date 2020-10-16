@@ -13,7 +13,7 @@ class CreateJobpostTables extends Migration
     {
         Schema::create('jobposts', function (Blueprint $table) {
             $table->increments('id');
-            $table->unsignedInteger('user_id');
+            $table->unsignedInteger('company_id');
             $table->string('project_title')->nullable();
             $table->string('project_classification')->nullable();
             $table->string('project_opening_category')->nullable();
@@ -34,7 +34,7 @@ class CreateJobpostTables extends Migration
             $table->string('status');
             $table->integer('save')->nullable();
             $table->timestamps();
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('company_id')->references('id')->on('users')->onDelete('cascade');
             $table->softDeletes();
 
         });

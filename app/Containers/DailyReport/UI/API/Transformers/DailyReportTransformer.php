@@ -3,6 +3,7 @@
 namespace App\Containers\DailyReport\UI\API\Transformers;
 
 use App\Containers\DailyReport\Models\DailyReport;
+use App\Containers\JobPost\UI\API\Transformers\JobPostTransformer;
 use App\Ship\Parents\Transformers\Transformer;
 
 class DailyReportTransformer extends Transformer
@@ -30,7 +31,13 @@ class DailyReportTransformer extends Transformer
     {
         $response = [
             'object' => 'DailyReport',
-            'id' => $entity->getHashedKey(),
+            'id' => $entity->id,
+            'applies_id' => $entity->applies_id,
+            'title' => $entity->title,
+            'description' => $entity->description,
+            'hour_spent' => $entity->hour_spent,
+            'date' => $entity->date,
+            'status' => $entity->status,
             'created_at' => $entity->created_at,
             'updated_at' => $entity->updated_at,
 

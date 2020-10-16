@@ -14,12 +14,12 @@ class CreateAchievementsTables extends Migration
         Schema::create('achievements', function (Blueprint $table) {
 
             $table->increments('id');
-            $table->unsignedInteger('user_id');
+            $table->unsignedInteger('seeker_id');
             $table->string('ach_title')->nullable();
             $table->string('ach_date')->nullable();
             $table->longText('ach_detail')->nullable();
             $table->timestamps();
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('seeker_id')->references('id')->on('users')->onDelete('cascade');
 
             //$table->softDeletes();
 

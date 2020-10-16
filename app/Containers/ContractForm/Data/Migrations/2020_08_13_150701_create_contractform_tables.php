@@ -14,18 +14,18 @@ class CreateContractformTables extends Migration
         Schema::create('contractforms', function (Blueprint $table) {
 
             $table->increments('id');
-            $table->unsignedInteger('applied_id');
-            $table->string('overview');
-            $table->string('management_of_person_info');
-            $table->string('purpose_of_use');
-            $table->string('prohibition');
-            $table->string('personal_info');
-            $table->string('inquiry');
-            $table->string('compliance');
-            $table->string('contact_us');
-            $table->string('status_agree');
+            $table->unsignedInteger('applies_id');
+            $table->longText('overview');
+            $table->longText('management_of_person_info');
+            $table->longText('purpose_of_use');
+            $table->longText('prohibition');
+            $table->longText('personal_info');
+            $table->longText('inquiry');
+            $table->longText('compliance');
+            $table->longText('contact_us');
+            $table->longText('status_agree');
             $table->timestamps();
-            $table->foreign('applied_id')->references('id')->on('applies')->onDelete('cascade');
+            $table->foreign('applies_id')->references('id')->on('applies')->onDelete('cascade');
             //$table->softDeletes();
 
         });

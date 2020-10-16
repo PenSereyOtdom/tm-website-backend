@@ -11,7 +11,7 @@ class CreateContractFormAction extends Action
     public function run(Request $request)
     {
         $data = $request->sanitizeInput([
-        'applied_id', 'overview','management_of_person_info','purpose_of_use','prohibition','personal_info',
+        'applies_id', 'overview','management_of_person_info','purpose_of_use','prohibition','personal_info',
         'inquiry', 'compliance','contact_us','status_agree',
         ]);
 

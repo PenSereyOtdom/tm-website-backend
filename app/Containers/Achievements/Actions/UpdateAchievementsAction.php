@@ -11,7 +11,7 @@ class UpdateAchievementsAction extends Action
     public function run(Request $request)
     {
         $data = $request->sanitizeInput([
-            'user_id', 'ach_title', 'ach_date', 'ach_detail'
+            'seeker_id', 'ach_title', 'ach_date', 'ach_detail'
         ]);
 
         $achievements = Apiato::call('Achievements@UpdateAchievementsTask', [$request->id, $data]);

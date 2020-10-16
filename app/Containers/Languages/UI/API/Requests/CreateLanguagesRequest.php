@@ -52,7 +52,7 @@ class CreateLanguagesRequest extends Request
     public function rules()
     {
         return [
-            'user_id' => 'required',
+            'seeker_id' => 'required',
             'lang' => 'required',
             'level'=>'required',
         ];

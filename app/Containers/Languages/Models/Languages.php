@@ -9,7 +9,7 @@ class Languages extends Model
     protected $table = 'languages';
 
     protected $fillable = [
-        'user_id', 'lang', 'level'
+        'seeker_id', 'lang', 'level'
 
     ];
 

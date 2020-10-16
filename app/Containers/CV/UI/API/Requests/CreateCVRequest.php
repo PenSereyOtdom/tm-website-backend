@@ -52,12 +52,13 @@ class CreateCVRequest extends Request
     public function rules()
     {
         return [         
-            'user_id' => 'required', 
+            'seeker_id' => 'required', 
             'full_name'=> 'required',
             'email' => 'required', 
             'phone_number'=> 'required', 
-            'summary'=> 'required','gender'=> 
-            'required','dob'=> 'required',
+            'summary'=> 'required',
+            'gender'=> 'required',
+            'dob'=> 'required',
             'skill'=> 'required'
             // 'id' => 'required',
             // '{user-input}' => 'required|max:255',

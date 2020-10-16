@@ -14,19 +14,15 @@ class CreateUserprofileTables extends Migration
         Schema::create('userprofiles', function (Blueprint $table) {
             $table->increments('id');
             $table->unsignedInteger('user_id');
-            $table->string('first_name');
+            $table->string('full_name');
             $table->string('status');
-            $table->string('last_name');
             $table->string('email');
             $table->string('major');
+            $table->string('year_exp');
+            $table->string('dob');
             $table->string('gender');
             $table->string('contact');
             $table->string('address');
-            $table->string('facebook_link');
-            $table->string('twitter_link');
-            $table->string('guthub_link');
-            $table->string('linkedin_link');
-            $table->string('website_link');
             $table->timestamps();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             //$table->softDeletes();

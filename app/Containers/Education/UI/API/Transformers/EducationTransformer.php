@@ -30,9 +30,10 @@ class EducationTransformer extends Transformer
     {
         $response = [
             'object' => 'Education',
-            'id' => $entity->getHashedKey(),
+            'id' => $entity->id,
             'school_name'=> $entity->school_name,
             'major'=> $entity->major,
+            'degree'=> $entity->degree,
             'edu_start_date'=> $entity->edu_start_date,
             'edu_end_date'=> $entity->edu_end_date,
             'edu_detail'=> $entity->edu_detail,

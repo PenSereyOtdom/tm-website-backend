@@ -11,7 +11,7 @@ class CreateDailyReportAction extends Action
     public function run(Request $request)
     {
         $data = $request->sanitizeInput([
-            // add your request data here
+            'applies_id','date','hour_spent','title','description','status'
         ]);
 
         $dailyreport = Apiato::call('DailyReport@CreateDailyReportTask', [$data]);

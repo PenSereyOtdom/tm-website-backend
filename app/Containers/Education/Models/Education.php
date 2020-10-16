@@ -9,7 +9,7 @@ class Education extends Model
     protected $table = 'education';
     
     protected $fillable = [
-        'user_id','school_name', 'major', 'edu_start_date', 'edu_end_date','edu_detail','exp_total','degree'
+        'seeker_id','school_name', 'major', 'edu_start_date', 'edu_end_date','edu_detail','degree'
     ];
 
     protected $attributes = [

@@ -14,7 +14,8 @@ class CompanyProfileRepository extends Repository
      * @var array
      */
     protected $fieldSearchable = [
-        // 'id' => '=',
+         'id' => '=',
+        'company_id' => '=',
         // 'fullname'  => 'like',
         // 'fullname' => '=',
     ];

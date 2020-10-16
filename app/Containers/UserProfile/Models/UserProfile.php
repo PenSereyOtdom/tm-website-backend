@@ -8,7 +8,7 @@ class UserProfile extends Model
 {
     protected $table = 'userprofiles';
     protected $fillable = [
-        'user_id','full_name','email','major','gender','contact','address','facebook_link','twitter_link','guthub_link','linkedin_link','website_link'
+        'user_id','full_name','email','major','year_exp','gender','contact','address','status'
     ];
 
     protected $attributes = [

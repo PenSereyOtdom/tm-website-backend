@@ -15,7 +15,7 @@ class JobPostRepository extends Repository
      * @var array
      */
     protected $fieldSearchable = [
-        'user_id' => '=',
+        'company_id' => '=',
         'project_title' => 'like',
         'project_classification' => 'like',
         'location' => 'like',

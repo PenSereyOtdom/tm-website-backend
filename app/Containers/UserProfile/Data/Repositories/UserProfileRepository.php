@@ -15,6 +15,7 @@ class UserProfileRepository extends Repository
      */
     protected $fieldSearchable = [
         'id' => '=',
+        'user_id' => '=',
         // ...
     ];
 

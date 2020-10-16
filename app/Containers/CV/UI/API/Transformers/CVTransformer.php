@@ -30,7 +30,7 @@ class CVTransformer extends Transformer
     {
         $response = [
             'object' => 'CV',
-            'id' => $entity->getHashedKey(),
+            'id' => $entity->id,
             'full_name'=> $entity->full_name,
             'email'=> $entity->email,
             'phone_number'=> $entity->phone_number,

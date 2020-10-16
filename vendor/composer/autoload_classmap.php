@@ -154,6 +154,7 @@ return array(
     'App\\Containers\\Applies\\Actions\\FindAppliesByIdAction' => $baseDir . '/app/Containers/Applies/Actions/FindAppliesByIdAction.php',
     'App\\Containers\\Applies\\Actions\\GetAllAppliesAction' => $baseDir . '/app/Containers/Applies/Actions/GetAllAppliesAction.php',
     'App\\Containers\\Applies\\Actions\\UpdateAppliesAction' => $baseDir . '/app/Containers/Applies/Actions/UpdateAppliesAction.php',
+    'App\\Containers\\Applies\\Data\\Criterias\\RoleCriteria' => $baseDir . '/app/Containers/Applies/Data/Criterias/RoleCriteria.php',
     'App\\Containers\\Applies\\Data\\Repositories\\AppliesRepository' => $baseDir . '/app/Containers/Applies/Data/Repositories/AppliesRepository.php',
     'App\\Containers\\Applies\\Data\\Transporters\\CreateAppliesTransporter' => $baseDir . '/app/Containers/Applies/Data/Transporters/CreateAppliesTransporter.php',
     'App\\Containers\\Applies\\Data\\Transporters\\DeleteAppliesTransporter' => $baseDir . '/app/Containers/Applies/Data/Transporters/DeleteAppliesTransporter.php',

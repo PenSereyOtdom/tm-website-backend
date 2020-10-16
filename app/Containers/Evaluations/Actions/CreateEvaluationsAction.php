@@ -11,7 +11,7 @@ class CreateEvaluationsAction extends Action
     public function run(Request $request)
     {
         $data = $request->sanitizeInput([
-            // add your request data here
+            'user_id','politeness','speed','knowledge','comment'
         ]);
 
         $evaluations = Apiato::call('Evaluations@CreateEvaluationsTask', [$data]);

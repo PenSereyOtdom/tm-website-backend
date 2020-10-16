@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3dcc94f2-663b-4855-b6eb-07385346db9c" name="Default Changelist" comment="" />
+    <list default="true" id="3dcc94f2-663b-4855-b6eb-07385346db9c" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -183,6 +185,11 @@
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
       <TestRunner scope="XML" />
@@ -200,7 +207,9 @@
       <workItem from="1600768094197" duration="334000" />
       <workItem from="1600823389247" duration="2383000" />
       <workItem from="1600845498506" duration="854000" />
-      <workItem from="1600910555290" duration="4972000" />
+      <workItem from="1600910555290" duration="5991000" />
+      <workItem from="1601258685805" duration="3000" />
+      <workItem from="1601279965731" duration="164000" />
     </task>
     <servers />
   </component>

@@ -20,7 +20,7 @@
  */
 
 /** @var Route $router */
-$router->patch('dailyreports/{id}', [
+$router->put('dailyreports/{id}', [
     'as' => 'api_dailyreport_update_daily_report',
     'uses'  => 'Controller@updateDailyReport',
     'middleware' => [

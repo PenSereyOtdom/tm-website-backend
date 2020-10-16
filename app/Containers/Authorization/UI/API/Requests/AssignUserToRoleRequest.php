@@ -28,7 +28,6 @@ class AssignUserToRoleRequest extends Request
      * @var  array
      */
     protected $decode = [
-        'roles_ids.*',
     ];
 
     /**

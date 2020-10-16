@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit24aa0e08925c87b5e5a61bf5f85bc152
+class ComposerStaticInit056ff5e5cf6e33a424bfde59665ef49d
 {
     public static $files = array (
         '6124b4c8570aa390c21fafd04a26c69f' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
@@ -933,6 +933,7 @@ class ComposerStaticInit24aa0e08925c87b5e5a61bf5f85bc152
         'App\\Containers\\Applies\\Actions\\FindAppliesByIdAction' => __DIR__ . '/../..' . '/app/Containers/Applies/Actions/FindAppliesByIdAction.php',
         'App\\Containers\\Applies\\Actions\\GetAllAppliesAction' => __DIR__ . '/../..' . '/app/Containers/Applies/Actions/GetAllAppliesAction.php',
         'App\\Containers\\Applies\\Actions\\UpdateAppliesAction' => __DIR__ . '/../..' . '/app/Containers/Applies/Actions/UpdateAppliesAction.php',
+        'App\\Containers\\Applies\\Data\\Criterias\\RoleCriteria' => __DIR__ . '/../..' . '/app/Containers/Applies/Data/Criterias/RoleCriteria.php',
         'App\\Containers\\Applies\\Data\\Repositories\\AppliesRepository' => __DIR__ . '/../..' . '/app/Containers/Applies/Data/Repositories/AppliesRepository.php',
         'App\\Containers\\Applies\\Data\\Transporters\\CreateAppliesTransporter' => __DIR__ . '/../..' . '/app/Containers/Applies/Data/Transporters/CreateAppliesTransporter.php',
         'App\\Containers\\Applies\\Data\\Transporters\\DeleteAppliesTransporter' => __DIR__ . '/../..' . '/app/Containers/Applies/Data/Transporters/DeleteAppliesTransporter.php',
@@ -7708,10 +7709,10 @@ class ComposerStaticInit24aa0e08925c87b5e5a61bf5f85bc152
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit24aa0e08925c87b5e5a61bf5f85bc152::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit24aa0e08925c87b5e5a61bf5f85bc152::$prefixDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInit24aa0e08925c87b5e5a61bf5f85bc152::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInit24aa0e08925c87b5e5a61bf5f85bc152::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit056ff5e5cf6e33a424bfde59665ef49d::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit056ff5e5cf6e33a424bfde59665ef49d::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInit056ff5e5cf6e33a424bfde59665ef49d::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInit056ff5e5cf6e33a424bfde59665ef49d::$classMap;
 
         }, null, ClassLoader::class);
     }

@@ -8,7 +8,7 @@ class Experiences extends Model
 {
     protected $table = 'experiences';
     protected $fillable = [
-        'user_id', 'exp_workplace_name','exp_title','exp_start_date','exp_end_date','exp_detail'
+        'seeker_id', 'exp_workplace_name','exp_title','exp_start_date','exp_end_date','exp_detail'
     ];
 
     protected $attributes = [

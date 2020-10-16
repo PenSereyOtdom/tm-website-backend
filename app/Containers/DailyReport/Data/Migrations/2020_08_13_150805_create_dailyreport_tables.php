@@ -14,14 +14,14 @@ class CreateDailyreportTables extends Migration
         Schema::create('dailyreports', function (Blueprint $table) {
 
             $table->increments('id');
-            $table->unsignedInteger('user_id');
-            $table->string('date');
+            $table->unsignedInteger('applies_id');
+            $table->dateTime('date');
             $table->string('hour_spent');
             $table->string('title');
             $table->string('description');
-            $table->string('task_name');
+            $table->string('status');
             $table->timestamps();
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('applies_id')->references('id')->on('applies')->onDelete('cascade');
             //$table->softDeletes();
 
         });

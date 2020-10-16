@@ -14,11 +14,11 @@ class CreateLanguagesTables extends Migration
         Schema::create('languages', function (Blueprint $table) {
 
             $table->increments('id');
-            $table->unsignedInteger('user_id')->nullable();
+            $table->unsignedInteger('seeker_id')->nullable();
             $table->string('lang')->nullable();
             $table->string('level')->nullable();
             $table->timestamps();
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('seeker_id')->references('id')->on('users')->onDelete('cascade');
 
         });
     }

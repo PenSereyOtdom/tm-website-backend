@@ -52,10 +52,9 @@ class CreateEducationRequest extends Request
     public function rules()
     {
         return [
-            'user_id' => 'required',
+            'seeker_id' => 'required',
             'school_name' => 'required',
             'degree' => 'required',
-            'exp_total' => 'required',
             'edu_start_date' => 'required',
             'edu_end_date' => 'required',
             'major' => 'required',

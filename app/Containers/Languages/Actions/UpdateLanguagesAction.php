@@ -11,7 +11,7 @@ class UpdateLanguagesAction extends Action
     public function run(Request $request)
     {
         $data = $request->sanitizeInput([
-            'user_id','lang', 'level'
+            'seeker_id','lang', 'level'
         ]);
 
         $languages = Apiato::call('Languages@UpdateLanguagesTask', [$request->id, $data]);

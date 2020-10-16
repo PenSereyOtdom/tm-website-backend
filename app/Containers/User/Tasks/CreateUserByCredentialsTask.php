@@ -51,7 +51,7 @@ class CreateUserByCredentialsTask extends Task
                 'password'  => Hash::make($password),
                 'email'     => $email,
                 'phone'     => $phone,
-                'username'      => $username,
+                'username'  => $username,
                 'gender'    => $gender,
                 'birth'     => $birth,
                 'is_client' => $isClient,

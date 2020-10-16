@@ -28,7 +28,7 @@
  */
 
 /** @var Route $router */
-$router->patch('cvs/{id}', [
+$router->put('cvs/{id}', [
     'as' => 'api_cv_update_c_v',
     'uses'  => 'Controller@updateCV',
     'middleware' => [

@@ -77,7 +77,7 @@
 /** @var Route $router */
 /** @var Route $router */
 
-$router->patch('companyprofiles/{id}', [
+$router->put('companyprofiles/{id}', [
     'as' => 'api_companyprofile_update_company_profile',
     'uses'  => 'Controller@updateCompanyProfile',
     'middleware' => [

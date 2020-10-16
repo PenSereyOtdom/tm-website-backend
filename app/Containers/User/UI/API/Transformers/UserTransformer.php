@@ -2,6 +2,7 @@
 
 namespace App\Containers\User\UI\API\Transformers;
 
+use App\Containers\Applies\UI\API\Transformers\AppliesTransformer;
 use App\Containers\Authorization\UI\API\Transformers\RoleTransformer;
 use App\Containers\User\Models\User;
 use App\Ship\Parents\Transformers\Transformer;
@@ -25,7 +26,6 @@ class UserTransformer extends Transformer
      * @var  array
      */
     protected $defaultIncludes = [
-
     ];
 
     /**
@@ -52,6 +52,7 @@ class UserTransformer extends Transformer
                 'avatar'   => $user->social_avatar,
                 'original' => $user->social_avatar_original,
             ],
+            'roles' => $user->roles,
             'user_profile'  => $user->userprofile,
             'created_at'           => $user->created_at,
             'updated_at'           => $user->updated_at,

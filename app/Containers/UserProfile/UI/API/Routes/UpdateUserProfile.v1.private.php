@@ -40,7 +40,7 @@
  */
 
 /** @var Route $router */
-$router->patch('userprofile/{id}', [
+$router->put('userprofile/{id}', [
     'as' => 'api_userprofile_update_user_profile',
     'uses'  => 'Controller@updateUserProfile',
     'middleware' => [

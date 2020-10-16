@@ -14,7 +14,7 @@ class CreateSetinterviewTables extends Migration
         Schema::create('setinterviews', function (Blueprint $table) {
 
             $table->increments('id');
-            $table->unsignedInteger('applied_id');
+            $table->unsignedInteger('applies_id');
             $table->string('pick_date');
             $table->string('status');
             $table->string('start_time');
@@ -22,7 +22,7 @@ class CreateSetinterviewTables extends Migration
             $table->string('meeting_url');
             $table->string('note');
             $table->timestamps();
-            $table->foreign('applied_id')->references('id')->on('applies')->onDelete('cascade');
+            $table->foreign('applies_id')->references('id')->on('applies')->onDelete('cascade');
 
         });
     }

@@ -2,11 +2,13 @@
 
 namespace App\Containers\User\Models;
 
+use App\Containers\Applies\Models\Applies;
 use App\Containers\Authorization\Traits\AuthenticationTrait;
 use App\Containers\Authorization\Traits\AuthorizationTrait;
 use App\Containers\Payment\Contracts\ChargeableInterface;
 use App\Containers\Payment\Models\PaymentAccount;
 use App\Containers\Payment\Traits\ChargeableTrait;
+use App\Containers\UserProfile\Models\UserProfile;
 use App\Ship\Parents\Models\UserModel;
 use Illuminate\Notifications\Notifiable;
 
@@ -90,5 +92,9 @@ class User extends UserModel implements ChargeableInterface
     {
         return $this->hasMany(PaymentAccount::class);
     }
+    public function userprofile()
+    {
+        return $this->hasMany(UserProfile::class, 'user_id', 'seeker_id');
 
+    }
 }

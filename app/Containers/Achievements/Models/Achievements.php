@@ -8,7 +8,7 @@ class Achievements extends Model
 {
     protected $table = 'achievements';
     protected $fillable = [
-        'user_id', 'ach_title', 'ach_date', 'ach_detail'
+        'seeker_id', 'ach_title', 'ach_date', 'ach_detail'
     ];
 
     protected $attributes = [

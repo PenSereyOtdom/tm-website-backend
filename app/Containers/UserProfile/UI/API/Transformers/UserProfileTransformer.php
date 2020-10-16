@@ -30,13 +30,15 @@ class UserProfileTransformer extends Transformer
     {
         $response = [
             'object' => 'UserProfile',
-            'id' => $entity->getHashedKey(),
+            'id' => $entity->id,
             'full_name'=> $entity->full_name,
             'email'=> $entity->email,
             'major'=> $entity->major,
             'gender'=> $entity->gender,
             'contact'=> $entity->contact,
+            'dob'=> $entity->dob,
             'address'=> $entity->address,
+            'status'=> $entity->status,
             'created_at' => $entity->created_at,
             'updated_at' => $entity->updated_at,
 

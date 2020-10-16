@@ -11,7 +11,7 @@ class UpdateExperiencesAction extends Action
     public function run(Request $request)
     {
         $data = $request->sanitizeInput([
-            'user_id', 'exp_workplace_name','exp_title','exp_start_date','exp_end_date','exp_detail'
+            'seeker_id', 'exp_workplace_name','exp_title','exp_start_date','exp_end_date','exp_detail'
         ]);
 
         $experiences = Apiato::call('Experiences@UpdateExperiencesTask', [$request->id, $data]);

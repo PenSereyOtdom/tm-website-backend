@@ -11,7 +11,7 @@ class UpdateDailyReportAction extends Action
     public function run(Request $request)
     {
         $data = $request->sanitizeInput([
-            // add your request data here
+            'status'
         ]);
 
         $dailyreport = Apiato::call('DailyReport@UpdateDailyReportTask', [$request->id, $data]);

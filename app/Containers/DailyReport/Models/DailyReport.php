@@ -6,8 +6,9 @@ use App\Ship\Parents\Models\Model;
 
 class DailyReport extends Model
 {
+    protected $table = 'dailyreports';
     protected $fillable = [
-        'user_id','date','hour_spent','title','description','task_name'
+        'applies_id','date','hour_spent','title','description','status'
     ];
 
     protected $attributes = [
@@ -31,4 +32,5 @@ class DailyReport extends Model
      * A resource key to be used by the the JSON API Serializer responses.
      */
     protected $resourceKey = 'dailyreports';
+
 }

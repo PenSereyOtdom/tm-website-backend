@@ -47,10 +47,10 @@ class RegisterUserRequest extends Request
     public function rules()
     {
         return [
-            'email'    => 'required|email|max:40|unique:users,email',
-            'password' => 'required|min:6|max:30',
-            'username'     => 'required|min:2|max:50|unique:users,username',
-            'phone'     => 'required|min:2|max:50|unique:users,phone',
+            // 'email'    => 'required|email|max:40|unique:users,email',
+            // 'password' => 'required|min:6|max:30',
+            // 'username'     => 'required|min:2|max:50|unique:users,username',
+            // 'phone'     => 'required|min:2|max:50|unique:users,phone',
         ];
     }
 

@@ -8,7 +8,7 @@ class CV extends Model
 {
     protected $table = 'cvs';
     protected $fillable = [
-        'user_id', 'full_name','email', 'phone_number', 'summary','gender','dob','skill'
+        'seeker_id', 'full_name','email', 'phone_number', 'summary','gender','dob','skill'
     ];
 
     protected $attributes = [

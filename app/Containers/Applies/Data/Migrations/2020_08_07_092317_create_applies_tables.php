@@ -15,16 +15,13 @@ class CreateAppliesTables extends Migration
             $table->increments('id');
             $table->unsignedInteger('seeker_id');
             $table->unsignedInteger('company_id');
-            $table->unsignedInteger('jobpost_id')->unique()->nullable();;
+            $table->unsignedInteger('jobpost_id');
             $table->string('confirmed');
-            $table->string('full_name');
-            $table->string('year_exp');
-            $table->string('progress');
             $table->timestamps();
             $table->foreign('seeker_id')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('company_id')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('jobpost_id')->references('id')->on('jobposts')->onDelete('cascade');
-            $table->softDeletes();
+            // $table->softDeletes();
 
         });
     }

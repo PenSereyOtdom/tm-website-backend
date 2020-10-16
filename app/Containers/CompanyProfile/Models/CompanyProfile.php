@@ -7,7 +7,7 @@ use App\Ship\Parents\Models\Model;
 class CompanyProfile extends Model
 {
     protected $fillable = [
-        'user_id','full_name','email','img_profile','overview','company_name','address','representative',
+        'company_id','full_name','email','img_profile','overview','company_name','address','representative',
         'person_in_charge','contact','year_of_establishment','annul_sales','number_of_employees','overview_history',
         'main_supplier','main_client','business_detail','area_of_expertise','construction','target_layer','url_name','other'
     ];
